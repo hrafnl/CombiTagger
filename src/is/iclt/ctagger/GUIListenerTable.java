@@ -1,4 +1,4 @@
-package is.ru.ctagger;
+package is.iclt.ctagger;
 
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.graphics.Color;
