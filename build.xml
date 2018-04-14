@@ -1,14 +1,19 @@
 <project name="CombiTagger" basedir="." default="main">
 
     <property name="src.dir"     value="src"/>
-
     <property name="build.dir"   value="build"/>
     <property name="classes.dir" value="${build.dir}/classes"/>
     <property name="dist.dir"    value="dist"/>
     <property name="lib.dir"     value="lib"/>
+    <property name="scripts.dir"     value="scripts"/>
+    <property name="examples.dir"     value="exampleFiles"/>
+    <property name="tagsets.dir"     value="tagsets"/>
+    <property name="resource.dir"     value="resource"/>
     <property name="swt" 	 location="${lib.dir}/swt.jar" />
+    <property name="zipname" value="${ant.project.name}" />
+    <property name="version" value="1.0.1" />
 
-    <property name="main-class"  value="is.ru.ctagger.CombinedTagging"/>
+    <property name="main-class"  value="is.iclt.ctagger.CombinedTagging"/>
 
     <path id="classpath">
        <pathelement location="${swt}" />
@@ -36,6 +41,20 @@
                 <attribute name="Main-Class" value="${main-class}"/>
             </manifest>
         </jar>
+    </target>
+
+    <target name="zip" depends="main">
+        <zip compress="yes" destfile="${dist.dir}/${zipname}-${version}.zip">
+            <zipfileset dir="." includes="*.sh" filemode="755" prefix="${zipname}/" />
+            <zipfileset dir="." includes="*.txt" prefix="${zipname}/" />
+            <zipfileset dir="." includes="README" prefix="${zipname}/" />
+            <zipfileset dir="${dist.dir}" includes="${ant.project.name}.jar" prefix="${zipname}/${dist.dir}" />
+            <zipfileset dir="${lib.dir}" prefix="${zipname}/${lib.dir}" />
+            <zipfileset dir="${scripts.dir}" prefix="${zipname}/${scripts.dir}" />
+            <zipfileset dir="${examples.dir}" prefix="${zipname}/${examples.dir}" />
+            <zipfileset dir="${resource.dir}" prefix="${zipname}/${resource.dir}" />
+            <zipfileset dir="${tagsets.dir}" prefix="${zipname}/${tagsets.dir}" />
+        </zip>
     </target>
 
     <target name="clean-build" depends="clean,jar"/>
