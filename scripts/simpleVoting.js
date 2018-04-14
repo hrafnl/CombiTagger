@@ -24,12 +24,12 @@
 
 function createAlgorithmSpecificGUI()
 {
-    println("function test: createAlgorithmSpecificGUI");
+    //println("function test: createAlgorithmSpecificGUI");
 }
 
 function runCombinedTaggingAlgorithm()
 {
-    println("function test: run algorithm");
+    //println("function test: run algorithm");
     for (i = 0; i < numberOfWords; i++)
     {
     	var currentTag = new Array(), currentTagCount = new Array();

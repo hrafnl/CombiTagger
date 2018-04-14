@@ -31,7 +31,7 @@ var taggerWeights = new Array();
 
 function createAlgorithmSpecificGUI()
 {
-    println(numberOfTaggerOutputs);
+    //println(numberOfTaggerOutputs);
     if (numberOfTaggerOutputs > 1)
     {
         var taggerDescription = new Array();
@@ -76,7 +76,7 @@ function createAlgorithmSpecificGUI()
 
 function runCombinedTaggingAlgorithm()
 {
-    println("function test: run algorithm");
+    //println("function test: run algorithm");
 	var taggerWeight = new Array();
 	for (i = 0; i < numberOfTaggerOutputs; i++)
 	{
