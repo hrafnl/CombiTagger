@@ -1,0 +1,46 @@
+<project name="CombiTagger" basedir="." default="main">
+
+    <property name="src.dir"     value="src"/>
+
+    <property name="build.dir"   value="build"/>
+    <property name="classes.dir" value="${build.dir}/classes"/>
+    <property name="dist.dir"    value="dist"/>
+    <property name="lib.dir"     value="lib"/>
+    <property name="swt" 	 location="${lib.dir}/swt.jar" />
+
+    <property name="main-class"  value="is.ru.ctagger.CombinedTagging"/>
+
+    <path id="classpath">
+       <pathelement location="${swt}" />
+    </path>
+
+    <target name="clean">
+        <delete dir="${build.dir}"/>
+    </target>
+
+    <target name="compile">
+        <mkdir dir="${classes.dir}"/>
+        <javac srcdir="${src.dir}" destdir="${classes.dir}"> 
+		<classpath refid="classpath" />
+	</javac>
+    </target>
+
+    <target name="jar" depends="compile">
+	<!--manifestclasspath property="jar.classpath" jarfile="${dist.dir}/${ant.project.name}.jar">
+              <classpath refid="classpath"/>
+        </manifestclasspath-->
+        <jar destfile="${dist.dir}/${ant.project.name}.jar" basedir="${classes.dir}">
+	    
+	    <zipfileset src="${lib.dir}/swt.jar" includes="**/*"/>
+            <manifest>
+                <attribute name="Main-Class" value="${main-class}"/>
+            </manifest>
+        </jar>
+    </target>
+
+    <target name="clean-build" depends="clean,jar"/>
+
+    <target name="main" depends="clean,jar"/>
+
+</project>
+

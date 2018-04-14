@@ -1,0 +1,15 @@
+Input		1		2		3		Combined Tagger
+The		DT		DT		DT		DT
+old		JJ		JJ		JJ		JJ
+man		NN		NN		NN		NN
+likes		VBZ		VB		VBS		VBZ
+cats		NNS		NN		NN		NN
+and		CC		CC		CC		CC
+dogs		NNS		NN		NN		NN
+.		PUNC		PUNC		PUNC		PUNC
+
+The		DT		DT		DT		DT
+can		NN		MD		NN		NN
+rusted		VBN		VBN		VBN		VBN
+.		PUNC		PUNC		PUNC		PUNC
+

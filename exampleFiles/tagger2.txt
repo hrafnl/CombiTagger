@@ -1,0 +1,14 @@
+The	DT
+old	JJ
+man	NN
+likes	VB
+cats	NN
+and	CC
+dogs	NN
+.	PUNC
+
+The	DT
+can	MD
+rusted	VBN
+.	PUNC
+

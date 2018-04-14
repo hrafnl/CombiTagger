@@ -1,0 +1,28 @@
+COMPILATION
+-----------
+To compile this project you need the swt.jar  (http://www.eclipse.org/swt/) for your platform.
+
+swt.jar can, for example, be downloaded from: 
+http://download.eclipse.org/eclipse/downloads/
+(select the latest release and then search for "SWT")
+
+Copy the swt.jar for your platform into the lib directory and the run ant (to build the CombiTagger.jar file).
+The swt files are copied into the CombiTagger.jar file during the build (see build.xml)
+
+TESTING
+-------
+The exampleFiles directory contains three tagger output files and a gold standard file. These files can be used for testing the functionality of CombiTagger.
+
+RUNNING
+-------
+If no command line parameters are given, CombiTagger starts with a GUI.
+Possible command line parameters can be seen with: java -jar dist/CombiTagger.jar -help
+
+For example, to run CombiTagger using simple voting on three tagger files and writing the output to a file:
+java -jar dist/CombiTagger.jar -t exampleFiles/tagger1.txt exampleFiles/tagger2.txt exampleFiles/tagger3.txt -o exampleFiles/results.txt
+
+DOCUMENTATION
+-------------
+Verena Henrich, Timo Reuter and Hrafn Loftsson. CombiTagger: A System for Developing Combined Taggers. In Proceedings of the 22nd International FLAIRS Conference, Special Track: "Applied Natural Language Processing". Sanibel Island, Florida, USA. © 2009 AAAI.  
+
+The paper is accessible at: http://www.ru.is/~hrafn
